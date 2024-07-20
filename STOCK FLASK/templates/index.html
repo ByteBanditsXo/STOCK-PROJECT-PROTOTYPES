@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock News and Data</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Fetch Stock News and Data</h2>
+        <form id="fetch-data-form" class="mb-3">
+            <div class="form-group">
+                <label for="ticker">Ticker Symbol:</label>
+                <input type="text" class="form-control" id="ticker" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get News and Data</button>
+        </form>
+        <div id="news-cards" class="row"></div>
+        <div id="financial-data" class="mt-4"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#fetch-data-form').submit(function(event) {
+                event.preventDefault();
+                var ticker = $('#ticker').val();
+                
+                // Fetch news
+                $.ajax({
+                    url: '/fetch_news',
+                    type: 'GET',
+                    data: {
+                        'ticker': ticker
+                    },
+                    success: function(data) {
+                        $('#news-cards').empty();
+                        if (data.length > 0) {
+                            data.forEach(function(news) {
+                                var cardHtml = '<div class="col-md-4"><div class="card mb-3">' +
+                                               '<div class="card-body">' +
+                                               '<h5 class="card-title">' + news.title + '</h5>' +
+                                               '<a href="' + news.url + '" class="btn btn-primary" target="_blank">Read More</a>' +
+                                               '</div></div></div>';
+                                $('#news-cards').append(cardHtml);
+                            });
+                        } else {
+                            $('#news-cards').html('<div class="col"><p>No news found.</p></div>');
+                        }
+                    },
+                    error: function() {
+                        $('#news-cards').html('<div class="col"><p>Error fetching news.</p></div>');
+                    }
+                });
+
+                // Fetch financial data
+                $.ajax({
+                    url: '/get_data',
+                    type: 'GET',
+                    data: {
+                        'ticker': ticker
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        // You can add code here to display the fetched financial data
+                        var financialDataHtml = '<div class="card mt-3"><div class="card-body">' +
+                                                '<h5 class="card-title">Financial Data for ' + ticker + '</h5>' +
+                                                '<p class="card-text">SMA: ' + data.SMA + '</p>' +
+                                                '<p class="card-text">EMA: ' + data.EMA + '</p>' +
+                                                '<p class="card-text">RSI: ' + data.RSI + '</p>' +
+                                                '<p class="card-text">MACD: ' + data.MACD + '</p>' +
+                                                '<p class="card-text">Signal Line: ' + data["Signal Line"] + '</p>' +
+                                                '<p class="card-text">Market Cap: ' + data["Market Cap"] + '</p>' +
+                                                '<p class="card-text">Predictions: ' + data.Predictions.join(", ") + '</p>' +
+                                                '</div></div>';
+                        $('#financial-data').html(financialDataHtml);
+                    },
+                    error: function() {
+                        console.error('Error fetching financial data.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

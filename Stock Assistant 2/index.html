@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Stock Assistant</title>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <img src="logo.png" alt="Company Logo" class="logo">
+        <div class="nav-logo">
+            <p class="nav-name">Stock Assistant</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">Services</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">About Us</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <span>How can I assist you ?</span>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-text-card">
+                <span>Stock Assistant</span>
+            </div>
+            <div class="featured-name">
+                <p>I'm <span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>"Maximize your investments with our platform offering precise stock price predictions and expert stock market assistance." 
+                </p>
+            </div>
+            <div class="featured-text-btn">
+                <button class="btn blue-btn" id="nextButtonNotes">Sign In</button>
+                <button class="btn" id="nextButtonAnswer">Sign Up</button><i class="uil uil-file-alt"></i></button>
+            </div>
+            <div class="social_icons">
+                <div class="icon" id="nextButtoninsta"><i class="uil uil-instagram"></i></div>
+                <div class="icon" id="nextButtonlink"><i class="uil uil-linkedin-alt"></i></div>
+                <div class="icon" id="nextButtongithub"><i class="uil uil-github-alt"></i></div>
+            </div>
+          </div>
+          <div class="featured-image">
+            <div class="image">
+                <img src="chatbot2.jpg" alt="avatar">
+            </div>
+          </div>
+          <!-- <div class="scroll-icon-box">
+            <a href="#about" class="scroll-btn">
+                <i class="uil uil-mouse-alt"></i>
+                <p>Scroll Down</p>
+            </a>
+          </div> -->
+
+       </section>
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>Trending Stocks</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>Stock Assistant</h3>
+                    <p>"Unlock the full potential of your investments with our comprehensive stock market platform, offering cutting-edge stock price predictions and expert assistance in all aspects of the stock market."
+                    </p>
+                    <div class="about-btn">
+                        <button class="btn" id="nextButtonconnect">Assist Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <div class="chart-header">
+                    <div>$112,340.00</div>
+                    <div>Month</div>
+                </div>
+                <div class="chart-body">
+                    <div class="bar" data-value="$6,000" data-label="APPLE" style="height: 60%;"></div>
+                    <div class="bar negative" data-value="$5,000" data-label="NETFLIX" style="height: 50%;"></div>
+                    <div class="bar" data-value="$7,000" data-label="INTEL" style="height: 70%;"></div>
+                    <div class="bar" data-value="$8,000" data-label="COC" style="height: 80%;"></div>
+                    <div class="bar negative" data-value="$4,000" data-label="VERIZON" style="height: 40%;"></div>
+                    <div class="bar" data-value="$9,000" data-label="CHEVRON" style="height: 90%;"></div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECT BOX ---------------- -->
+
+       <section class="section" id="projects">
+          <div class="top-header">
+              <h1>About Us</h1>
+          </div>
+          <div class="project-container">
+            <div class="project-box">
+                <i class="uil uil-briefcase-alt"></i>
+                <h3>Collaboration</h3>
+                <label>21+ Companies 
+                    <br>
+                    <p><ul><li>Microsoft</li>
+                           <li>100X VC</li>
+                           <li>Lenskart</li>
+                           <li>Zomato</li>
+                           <li>Shadi.com</li>
+                    </ul>
+                    </p>
+                </label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-users-alt"></i>
+                <label>100K+ Happy Members</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-award"></i>
+                <h3>Ratings</h3>
+                <label>4 Star ⭐⭐⭐⭐</label>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+
+       <section class="section" id="contact">
+          <div class="top-header">
+            <h1>Get in touch</h1>
+            <span></span>
+          </div>
+          <div class="row">
+             <div class="col">
+                <div class="contact-info">
+                    <h2>Contact Us<i class="uil uil-corner-right-down"></i></h2>
+                    <p><i class="uil uil-envelope"></i> Email: stockassistant@gmail.com</p>
+                </div>
+             </div>
+             <div class="col">
+                <form action="" method="POST">
+                <div class="form-control">
+                    <div class="form-inputs">
+                        <input type="text" class="input-field" placeholder="Name" required>
+                        <input type="Email" class="input-field" placeholder="Email" required>
+                    </div>
+                    <div class="text-area">
+                        <textarea placeholder="Message" required></textarea>
+                    </div>
+                    <div class="form-button">
+                        <button type="submit" class="btn">Send<i class="uil uil-message"></i></button>
+                    </div>
+                </div>
+            </form>
+             </div>
+          </div>
+       </section>
+
+    </main>
+
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Stock Assistant</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">Services</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">About Us</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon" id="nextButtoninsta"><i class="uil uil-instagram"></i></div>
+            <div class="icon" id="nextButtonlink"><i class="uil uil-linkedin-alt"></i></div>
+            <div class="icon" id="nextButtongithub"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+            <p>"Thank you for visiting. Stay connected!"</p>
+        </div>
+    </footer>
+
+    </div>
+
+
+
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+       <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+<!-- Pop--pop
+<a href="#" id="popup-link">Open Pop-up Page</a>
+
+    <div id="popup" class="popup">
+        <h2>Latest Update:-</h2>
+        <br>
+        <p>NETFLIX hits 52 weeks all time high on Dow Jones 📈.</p>
+        <br>
+        <p>American Express feels very bearish today 📉.</p>
+        <br>
+        <span class="close">Close</span>
+    </div> -->
+
+    <script>
+        // JavaScript code to handle the click event and show/hide the pop-up
+    //     const link = document.getElementById('popup-link');
+    //     const popup = document.getElementById('popup');
+    //     const close = document.querySelector('.close');
+
+    //     function showPopup() {
+    //         popup.style.display = 'block'; // Show the pop-up
+    //         link.style.display = 'none'; // Hide the link
+    //     }
+
+    //     link.addEventListener('click', function(e) {
+    //         e.preventDefault(); // Prevent the link from navigating to a different page
+    //         showPopup();
+    //     });
+
+    //     close.addEventListener('click', function() {
+    //         popup.style.display = 'none'; // Hide the pop-up
+    //     });
+
+    //     // Automatically open the popup on page load
+    //     window.addEventListener('load', showPopup);
+    // </script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="main.js"></script>
+</body>
+</html>
